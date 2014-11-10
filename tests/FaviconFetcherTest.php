@@ -27,5 +27,14 @@ class FaviconFetcherTest extends \PHPUnit_Framework_TestCase
         if (file_exists(__DIR__ . '/../Resources/github.com.png')) {
             unlink(__DIR__ . '/../Resources/github.com.png');
         }
+        if (file_exists(__DIR__ . '/../Resources/facebook.com.png')) {
+            unlink(__DIR__ . '/../Resources/facebook.com.png');
+        }
+        if (file_exists(__DIR__ . '/../Resources/twitter.com.png')) {
+            unlink(__DIR__ . '/../Resources/twitter.com.png');
+        }
+        if (file_exists(__DIR__ . '/../Resources/unfuddle.com.png')) {
+            unlink(__DIR__ . '/../Resources/unfuddle.com.png');
+        }
     }
 } 

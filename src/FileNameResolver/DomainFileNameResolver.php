@@ -30,7 +30,8 @@ class DomainFileNameResolver implements FileNameResolverInterface
         if (isset($parseUrl['host'])) {
             $domain = $parseUrl['host'];
         } elseif (isset($parseUrl['path'])) {
-            $domain = array_shift(explode('/', $parseUrl['path'], 2));
+            $urlParts = explode('/', $parseUrl['path'], 2);
+            $domain = array_shift($urlParts);
         }
 
         if (is_null($domain)) {
