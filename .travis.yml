@@ -11,7 +11,6 @@ script: phpunit tests/
 before_script:
   - sudo apt-get update -q
   - sudo apt-get install -y imagemagick
-  - printf "\n" | pecl install imagick
   - wget http://getcomposer.org/composer.phar
   - php composer.phar --prefer-source --dev install
   - cp phpunit.xml.dist phpunit.xml
