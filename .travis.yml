@@ -7,3 +7,8 @@ php:
   - hhvm
 
 script: phpunit tests/
+
+before_script:
+  - wget http://getcomposer.org/composer.phar
+  - php composer.phar --prefer-source --dev install
+  - cp phpunit.xml.dist phpunit.xml
