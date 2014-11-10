@@ -5,6 +5,9 @@ Lib to fetch Favicon from a url and store it as PNG.
 Its highly flexible. You can use your own Fetchers or FileNamerResolvers.
 So it would also be possible to store it as gif, jpg or whatever.
 
+[![Build Status](https://secure.travis-ci.org/ivoba/favicon-fetcher.png?branch=master)](http://travis-ci.org/ivoba/favicon-fetcher)
+[![Dependency Status](https://www.versioneye.com/php/ivoba:favicon-fetcher/master/badge.png)](https://www.versioneye.com/php/ivoba:favicon-fetcher/master)
+
 ## Installation
 
 Via composer:
