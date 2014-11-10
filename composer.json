@@ -1,0 +1,33 @@
+{
+    "name": "ivoba/favicon-fetcher",
+    "description": "Favicon Fetcher",
+    "keywords": [
+        "favicon",
+        "fetcher",
+        "scrapper",
+        "grabber"
+    ],
+    "homepage": "https://github.com/ivoba/favicon-fetcher",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivo Bathke",
+            "email": "ivo.bathke@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "ext-curl": "*",
+        "ext-imagick": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~3.7",
+        "ivoba/stop": "~0.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ivoba\\FaviconFetcher\\": ["src", "tests"]
+        }
+    }
+}
