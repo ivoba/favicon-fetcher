@@ -4,6 +4,7 @@ namespace Ivoba\FaviconFetcher;
 
 use Ivoba\FaviconFetcher\Converter\ImageMagickIcoPngConverter;
 use Ivoba\FaviconFetcher\Fetcher\DefaultFetcher;
+use Ivoba\FaviconFetcher\Fetcher\FaviconIcoFetcher;
 use Ivoba\FaviconFetcher\Fetcher\FetcherInterface;
 use Ivoba\FaviconFetcher\Fetcher\GetFaviconFetcher;
 use Ivoba\FaviconFetcher\Fetcher\GoogleFetcher;
@@ -91,9 +92,11 @@ class FaviconFetcher
             $defaultImg = __DIR__ . '/../tests/Resources/default_favicon_image.png';
         }
         $getFaviconService = new GetFaviconFetcher();
-        $getFaviconService->setConverter(new ImageMagickIcoPngConverter());
+        $converter = new ImageMagickIcoPngConverter();
+        $getFaviconService->setConverter($converter);
         return new self([new GoogleFetcher(),
                             $getFaviconService,
+                            new FaviconIcoFetcher($converter),
                             new DefaultFetcher($defaultImg)],
                         new DomainFileNameResolver($prefix = '', $suffix = '.png'),
                         $imageDir);
