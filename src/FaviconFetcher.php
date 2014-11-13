@@ -82,6 +82,22 @@ class FaviconFetcher
     }
 
     /**
+     * @return \Ivoba\FaviconFetcher\FileNameResolver\FileNameResolverInterface
+     */
+    public function getFileNameResolver()
+    {
+        return $this->fileNameResolver;
+    }
+
+    /**
+     * @param \Ivoba\FaviconFetcher\FileNameResolver\FileNameResolverInterface $fileNameResolver
+     */
+    public function setFileNameResolver(FileNameResolverInterface $fileNameResolver)
+    {
+        $this->fileNameResolver = $fileNameResolver;
+    }
+
+    /**
      * @param string $imageDir
      * @param null $defaultImg
      * @return FaviconFetcher
