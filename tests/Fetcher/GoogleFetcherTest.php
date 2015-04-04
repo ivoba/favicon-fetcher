@@ -1,6 +1,6 @@
 <?php
 
-namespace Ivoba\FaviconFetcher;
+namespace Ivoba\FaviconFetcher\Test;
 
 
 use Ivoba\FaviconFetcher\Fetcher\GoogleFetcher;
@@ -16,7 +16,8 @@ class GoogleFetcherTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(file_exists($destination));
     }
 
-    public function testSkipDefaultIcon(){
+    public function testSkipDefaultIcon()
+    {
         $fetcher     = new GoogleFetcher();
         $destination = __DIR__ . '/../Resources/bogus_google_favicon.png';
         $generated   = $fetcher->fetch('nononononono', $destination);
@@ -24,15 +25,16 @@ class GoogleFetcherTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse(file_exists($destination));
     }
 
-    public function testDontSkipDefaultIcon(){
-        $fetcher     = new GoogleFetcher();
+    public function testDontSkipDefaultIcon()
+    {
+        $fetcher = new GoogleFetcher();
         $fetcher->setSkipDefaultImage(false);
         $destination = __DIR__ . '/../Resources/default_google_favicon.png';
         $generated   = $fetcher->fetch('nononononono', $destination);
         $this->assertTrue($generated);
         $this->assertTrue(file_exists($destination));
     }
-    
+
     protected function tearDown()
     {
         if (file_exists(__DIR__ . '/../Resources/new_google_favicon.png')) {

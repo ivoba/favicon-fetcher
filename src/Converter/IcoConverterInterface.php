@@ -3,7 +3,8 @@
 namespace Ivoba\FaviconFetcher\Converter;
 
 
-interface IcoConverterInterface {
+interface IcoConverterInterface
+{
 
     public function convert($file);
 

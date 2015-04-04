@@ -24,7 +24,7 @@ class GoogleFetcher extends WebServiceFetcher
 
     /**
      * @param string $url
-     * @param bool $skipDefaultIcon
+     * @param bool   $skipDefaultIcon
      */
     function __construct($url = 'https://www.google.com/s2/favicons?domain=', $skipDefaultIcon = true)
     {

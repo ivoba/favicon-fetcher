@@ -34,9 +34,9 @@ class FaviconFetcher
     private $fileNameResolver;
 
     /**
-     * @param array $fetchers
+     * @param array                     $fetchers
      * @param FileNameResolverInterface $fileNameResolver
-     * @param string $imageDir
+     * @param string                    $imageDir
      */
     function __construct(array $fetchers,
                          FileNameResolverInterface $fileNameResolver = null,
@@ -99,7 +99,7 @@ class FaviconFetcher
 
     /**
      * @param string $imageDir
-     * @param null $defaultImg
+     * @param null   $defaultImg
      * @return FaviconFetcher
      */
     public static function create($imageDir = '/tmp/', $defaultImg = null)
@@ -108,7 +108,7 @@ class FaviconFetcher
             $defaultImg = __DIR__ . '/../tests/Resources/default_favicon_image.png';
         }
         $getFaviconService = new GetFaviconFetcher();
-        $converter = new ImageMagickIcoPngConverter();
+        $converter         = new ImageMagickIcoPngConverter();
         $getFaviconService->setConverter($converter);
         return new self([new GoogleFetcher(),
                             $getFaviconService,

@@ -30,13 +30,13 @@ class WebServiceFetcher implements FetcherInterface
     {
         try {
             $ret = null;
-            $ch = curl_init($this->url . $url);
+            $ch  = curl_init($this->url . $url);
             curl_setopt($ch, CURLOPT_TIMEOUT, 5);
-            curl_setopt($ch,  CURLOPT_RETURNTRANSFER, TRUE);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
             $contents = curl_exec($ch);
             $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            if ( $httpCode == 200 ) {
+            if ($httpCode == 200) {
                 $fp = fopen($destination, 'w+');
                 fwrite($fp, $contents);
                 fclose($fp);
@@ -45,7 +45,6 @@ class WebServiceFetcher implements FetcherInterface
             curl_close($ch);
             return $ret;
         } catch (\Exception $e) {
-
         }
         return null;
     }

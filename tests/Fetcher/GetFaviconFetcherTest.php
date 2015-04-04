@@ -1,6 +1,6 @@
 <?php
 
-namespace Ivoba\FaviconFetcher;
+namespace Ivoba\FaviconFetcher\Test;
 
 use Ivoba\FaviconFetcher\Converter\ImageMagickIcoPngConverter;
 use Ivoba\FaviconFetcher\Fetcher\GetFaviconFetcher;
@@ -9,7 +9,8 @@ class GetFaviconFetcherTest extends \PHPUnit_Framework_TestCase
 {
     public function testFetch()
     {
-        $fetcher  = new GetFaviconFetcher();
+        $this->markTestSkipped('GetfaviconFetcher on appspot seems broken.');
+        $fetcher     = new GetFaviconFetcher();
         $destination = __DIR__ . '/../Resources/new_getfavicon_favicon.ico';
         $generated   = $fetcher->fetch('http://github.com', $destination);
         $this->assertTrue($generated);
@@ -18,17 +19,19 @@ class GetFaviconFetcherTest extends \PHPUnit_Framework_TestCase
 
     public function testFetchAndConvert()
     {
-        $fetcher  = new GetFaviconFetcher();
+        $this->markTestSkipped('GetfaviconFetcher on appspot seems broken.');
+        $fetcher = new GetFaviconFetcher();
         $fetcher->setConverter(new ImageMagickIcoPngConverter());
         $destination = __DIR__ . '/../Resources/new_getfavicon_favicon.ico';
-        $png = __DIR__ . '/../Resources/new_getfavicon_favicon.png';
+        $png         = __DIR__ . '/../Resources/new_getfavicon_favicon.png';
         $generated   = $fetcher->fetch('http://github.com', $destination);
         $this->assertTrue($generated);
         $this->assertTrue(file_exists($png));
     }
 
-    public function testSkipDefaultIcon(){
-        $fetcher  = new GetFaviconFetcher();
+    public function testSkipDefaultIcon()
+    {
+        $fetcher     = new GetFaviconFetcher();
         $destination = __DIR__ . '/../Resources/bogus_getfavicon_favicon.ico';
         $generated   = $fetcher->fetch('nononononono', $destination);
         $this->assertNull($generated);

@@ -26,12 +26,12 @@ class DomainFileNameResolver implements FileNameResolverInterface
     public function get($url)
     {
         $parseUrl = parse_url(trim($url));
-        $domain = null;
+        $domain   = null;
         if (isset($parseUrl['host'])) {
             $domain = $parseUrl['host'];
         } elseif (isset($parseUrl['path'])) {
             $urlParts = explode('/', $parseUrl['path'], 2);
-            $domain = array_shift($urlParts);
+            $domain   = array_shift($urlParts);
         }
 
         if (is_null($domain)) {

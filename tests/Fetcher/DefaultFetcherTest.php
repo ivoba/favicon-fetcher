@@ -1,5 +1,6 @@
 <?php
-namespace Ivoba\FaviconFetcher;
+
+namespace Ivoba\FaviconFetcher\Test;
 
 use Ivoba\FaviconFetcher\Fetcher\DefaultFetcher;
 

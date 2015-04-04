@@ -23,9 +23,9 @@ class GetFaviconFetcher extends WebServiceFetcher
     private $skipDefaultImage;
 
     /**
-     * @param string $url
+     * @param string                $url
      * @param IcoConverterInterface $converter
-     * @param bool $skipDefaultIcon
+     * @param bool                  $skipDefaultIcon
      */
     function __construct($url = 'https://getfavicon.appspot.com/', IcoConverterInterface $converter = null, $skipDefaultIcon = true)
     {

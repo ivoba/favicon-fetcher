@@ -36,7 +36,7 @@ class FaviconIcoFetcher implements FetcherInterface
         try {
             $ret = null;
             $url = $this->addhttp($url);
-            $ch  = curl_init($url.'/favicon.ico');
+            $ch  = curl_init($url . '/favicon.ico');
             curl_setopt($ch, CURLOPT_TIMEOUT, 5);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);

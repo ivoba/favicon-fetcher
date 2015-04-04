@@ -6,7 +6,8 @@ namespace Ivoba\FaviconFetcher\Fetcher;
  * Interface FetcherInterface
  * @package Ivoba\Favicon_Fetcher\Fetcher
  */
-interface FetcherInterface {
+interface FetcherInterface
+{
 
     /**
      * @param $url

@@ -29,6 +29,7 @@ class ImageMagickIcoPngConverter implements IcoConverterInterface
         $png  = $path['dirname'] . '/' . $path['filename'] . '.png';
         $cmd  = 'convert ' . escapeshellarg($file) . ' -thumbnail 16x16 -alpha on -background none -flatten ' . escapeshellarg($png);
         exec($cmd);
+        
         return true;
     }
 }
