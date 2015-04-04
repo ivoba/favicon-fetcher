@@ -38,9 +38,9 @@ class FaviconFetcher
      * @param FileNameResolverInterface $fileNameResolver
      * @param string                    $imageDir
      */
-    function __construct(array $fetchers,
-                         FileNameResolverInterface $fileNameResolver = null,
-                         $imageDir = '/tmp/')
+    public function __construct(array $fetchers,
+                                FileNameResolverInterface $fileNameResolver = null,
+                                $imageDir = '/tmp/')
     {
         $this->fetchers = $fetchers;
         $this->imageDir = $imageDir;
@@ -78,7 +78,7 @@ class FaviconFetcher
      */
     public function addFetcher(FetcherInterface $fetcher)
     {
-        $this->fetcher[] = $fetcher;
+        $this->fetchers[] = $fetcher;
     }
 
     /**
@@ -110,10 +110,12 @@ class FaviconFetcher
         $getFaviconService = new GetFaviconFetcher();
         $converter         = new ImageMagickIcoPngConverter();
         $getFaviconService->setConverter($converter);
-        return new self([new GoogleFetcher(),
+        return new self([
+                            new GoogleFetcher(),
                             $getFaviconService,
                             new FaviconIcoFetcher($converter),
-                            new DefaultFetcher($defaultImg)],
+                            new DefaultFetcher($defaultImg)
+                        ],
                         new DomainFileNameResolver($prefix = '', $suffix = '.png'),
                         $imageDir);
     }

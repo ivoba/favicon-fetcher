@@ -13,7 +13,7 @@ class DomainFileNameResolver implements FileNameResolverInterface
     private $prefix;
     private $suffix;
 
-    function __construct($prefix = '', $suffix = '')
+    public function __construct($prefix = '', $suffix = '')
     {
         $this->prefix = $prefix;
         $this->suffix = $suffix;

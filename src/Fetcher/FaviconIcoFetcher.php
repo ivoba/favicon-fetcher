@@ -20,7 +20,7 @@ class FaviconIcoFetcher implements FetcherInterface
      */
     private $converter;
 
-    function __construct(IcoConverterInterface $converter = null)
+    public function __construct(IcoConverterInterface $converter = null)
     {
         $this->converter = $converter;
     }
@@ -54,7 +54,7 @@ class FaviconIcoFetcher implements FetcherInterface
             curl_close($ch);
             return $ret;
         } catch (\Exception $e) {
-
+            // hmm ok, let the next Fetcher try its luck
         }
         return null;
     }

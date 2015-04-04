@@ -19,7 +19,7 @@ class DefaultFetcher implements FetcherInterface
     /**
      * @param string $defaultImg image with full path
      */
-    function __construct($defaultImg)
+    public function __construct($defaultImg)
     {
         $this->defaultImg = $defaultImg;
     }

@@ -27,7 +27,7 @@ class GetFaviconFetcher extends WebServiceFetcher
      * @param IcoConverterInterface $converter
      * @param bool                  $skipDefaultIcon
      */
-    function __construct($url = 'https://getfavicon.appspot.com/', IcoConverterInterface $converter = null, $skipDefaultIcon = true)
+    public function __construct($url = 'https://getfavicon.appspot.com/', IcoConverterInterface $converter = null, $skipDefaultIcon = true)
     {
         $this->skipDefaultImage = $skipDefaultIcon;
         $this->converter        = $converter;
@@ -54,6 +54,7 @@ class GetFaviconFetcher extends WebServiceFetcher
             }
             return $ch;
         } catch (\Exception $e) {
+            // hmm ok, let the next Fetcher try its luck
         }
         return null;
     }

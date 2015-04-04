@@ -11,14 +11,14 @@ class WebServiceFetcher implements FetcherInterface
 {
 
     /**
-     * @var
+     * @var string
      */
     protected $url;
 
     /**
-     * @param $url
+     * @param string $url
      */
-    function __construct($url)
+    public function __construct($url)
     {
         $this->url = $url;
     }
@@ -45,6 +45,7 @@ class WebServiceFetcher implements FetcherInterface
             curl_close($ch);
             return $ret;
         } catch (\Exception $e) {
+            // hmm ok, let the next Fetcher try its luck
         }
         return null;
     }

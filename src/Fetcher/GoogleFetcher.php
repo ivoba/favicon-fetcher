@@ -26,7 +26,7 @@ class GoogleFetcher extends WebServiceFetcher
      * @param string $url
      * @param bool   $skipDefaultIcon
      */
-    function __construct($url = 'https://www.google.com/s2/favicons?domain=', $skipDefaultIcon = true)
+    public function __construct($url = 'https://www.google.com/s2/favicons?domain=', $skipDefaultIcon = true)
     {
         $this->skipDefaultImage = $skipDefaultIcon;
         parent::__construct($url);
@@ -53,7 +53,7 @@ class GoogleFetcher extends WebServiceFetcher
                 return true;
             }
         } catch (\Exception $e) {
-
+            // hmm ok, let the next Fetcher try its luck
         }
         return null;
     }
