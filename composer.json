@@ -22,7 +22,8 @@
   },
   "require-dev": {
     "phpunit/phpunit": "4.*",
-    "ivoba/stop": "~0.2"
+    "ivoba/stop": "~0.2",
+    "scrutinizer/ocular": "~1.1"
   },
   "autoload": {
     "psr-4": {
